@@ -18,14 +18,21 @@ export default {
     data(){
         return{
             model:{
-
+               
             }
         }
     },
     methods:{
+    
+      async save(){
+         console.log('save')
+    //    await this.$http.post('categories',this.model)
         
-        save(){
-            this.$http.post()
+    //    this.$router.push('/categories/list')
+    //    this.$message({
+    //        type:'success',
+    //        message:'保存成功'
+    //    })
         }
     }
     
