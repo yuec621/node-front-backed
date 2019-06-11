@@ -14,4 +14,13 @@ vue create web
 vue create admin
 
 
+#后台管理
+基于element ui的后台管理基础界面搭建
+1.创建分类
+2.分类列表
+3.修改分类
+4.删除分类
+
+
+
 
