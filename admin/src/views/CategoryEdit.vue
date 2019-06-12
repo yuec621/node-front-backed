@@ -26,7 +26,7 @@ export default {
     
       async save(){
          console.log('save')
-       await this.$http.post('categories',this.model)
+      var res= await this.$http.post('categories',this.model)
         
        this.$router.push('/categories/list')
        this.$message({
