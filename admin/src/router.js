@@ -16,6 +16,10 @@ export default new Router({
         component: CategoryEdit
       },
       {
+        path: '/categories/edit/:id',
+        component: CategoryEdit,props:true
+      },
+      {
         path: '/categories/list',
         component: CategoryList
       }]

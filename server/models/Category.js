@@ -1,5 +1,5 @@
-const mongose=require('mongoose')
-const schema=new mongose.Schema({
+const mongoose=require('mongoose')
+const schema=new mongoose.Schema({
     name:{type:String}
 })
-module.exports=mongose.model('Category',schema)
+module.exports=mongoose.model('Category',schema)
