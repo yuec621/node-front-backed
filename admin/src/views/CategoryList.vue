@@ -16,6 +16,11 @@
             size="small"
             @click="remove(scope.row)"
           >删除</el-button>
+            <el-button
+            type="text"
+            size="small"
+            @click="watch(scope.row)"
+          >查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -35,6 +40,19 @@ export default {
       this.items = res.data;
        
     },
+     async watch(row) {
+       var that=this
+      const res = await this.$http.get("categories");
+      console.log(res.data)
+      this.items = res.data;
+      
+      this.$message({
+          message:'name:'+res.data.name
+
+
+      })
+       
+    },
     async remove(row){
      
         this.$confirm(`是否删除分类 "${row.name}"`, '提示', {
@@ -43,6 +61,7 @@ export default {
           type: 'warning'
         }).then(() => {
            this.$http.delete(`categories/${row._id}`)
+           console.log(row._id)
           this.$message({
             type: 'success',
             message: '删除成功!'

@@ -35,4 +35,8 @@ use admin
 #插入数据
 db.repo.insert({"xxx":"xxx"})
 
+
+下载studio 3t-x64位编写数据
+
+
 、、、

@@ -13,13 +13,14 @@ module.exports = app => {
 //编辑分类
     router.put('/categories/:id', async (req, res) => {
 
-        const model = await Category.findByAndUpdate(req.param.id, req.body)
+        const model = await Category.findByIdAndUpdate(req.params.id, req.body)
         res.send(model)
 
     })
 //删除分类
     router.delete('/categories/:id', async (req, res) => {
-     await Category.findByIdAndDelete(req.param.id, req.body)
+     await Category.findByIdAndDelete(req.params.id, req.body)
+     
       res.send({
           success:true
       })
@@ -33,7 +34,7 @@ module.exports = app => {
     })
 //查看分类
     router.get('/categories/:id', async (req, res) => {
-        const model = await Category.findById(req.param.id)
+        const model = await Category.findById(req.params.id)
         res.send(model)
 
     })
