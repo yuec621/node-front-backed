@@ -35,22 +35,19 @@ export default {
   },
   methods: {
     async fetch() {
-     
       const res = await this.$http.get("categories");
       this.items = res.data;
        
     },
      async watch(row) {
        var that=this
-      const res = await this.$http.get("categories");
-      console.log(res.data)
-      this.items = res.data;
-      
+      const res = await this.$http.get(`categories/${row._id}`);
+      console.log(res)
+            
       this.$message({
-          message:'name:'+res.data.name
-
-
-      })
+          type:'success',
+          message:'name:'+`${res.data.name}`+'id'+`${res.data._id}`,
+            })
        
     },
     async remove(row){
