@@ -42,14 +42,13 @@ export default {
      async watch(row) {
        var that=this
       const res = await this.$http.get(`categories/${row._id}`);
-      console.log(res)
-            
+                 
       this.$message({
           type:'success',
           message:'name:'+`${res.data.name}`+'id'+`${res.data._id}`,
+
             })
-       
-    },
+           },
     async remove(row){
      
         this.$confirm(`是否删除分类 "${row.name}"`, '提示', {
@@ -58,7 +57,7 @@ export default {
           type: 'warning'
         }).then(() => {
            this.$http.delete(`categories/${row._id}`)
-           console.log(row._id)
+           
           this.$message({
             type: 'success',
             message: '删除成功!'
