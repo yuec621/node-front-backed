@@ -109,11 +109,8 @@
 
         </el-row>
         </el-tab-pane>
-       
-       
         </el-tabs>
        
-
          <el-form-item  style="margin-top:1.6rem;">
             <el-button type="primary" native-type="submit">保存</el-button>
         </el-form-item>
@@ -136,25 +133,22 @@ export default {
                avatar:'',
                 scores:{
                 diffcult:0
-            },
+                 },
             skills:[]
             
             },
            
-          
-        }
+            }
     },
     methods:{
-
-    
-         afterUpload(res){
+             afterUpload(res){
              console.log(res)
             //  this.$set(this.model,'avatar',res.url)
              this.model.avatar=res.url
             },
     
       async save(){
-        //  console.log('save')
+        
         let res
         if (this.id) {
             
