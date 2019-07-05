@@ -58,5 +58,6 @@ module.exports = app => {
         const file=req.file
         file.url=`http://localhost:4000/uploads/${file.filename}`
         res.send(file)
+        
     })
 }
